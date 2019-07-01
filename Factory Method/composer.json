@@ -1,0 +1,25 @@
+{
+    "name": "harlequiin/factory-method",
+    "description": "Factory Method pattern",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Maris Udris",
+            "email": "harlequiin@protonmail.com"
+        }
+    ],
+    "require": {},
+    "require-dev": {
+        "psy/psysh": "*"
+    },
+
+    "autoload": {
+        "psr-4": {
+            "harlequiin\\Patterns\\FactoryMethod\\": ""
+        }
+    },
+    "config": {
+        "bin-dir": "bin/"
+    }
+}
