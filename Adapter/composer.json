@@ -1,0 +1,25 @@
+{
+    "name": "harlequiin/adapter",
+    "description": "Adapter pattern",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Maris Udris",
+            "email": "harlequiin@protonmail.com"
+        }
+    ],
+    "require": {},
+    "require-dev": {
+        "psy/psysh": "*"
+    },
+
+    "autoload": {
+        "psr-4": {
+            "harlequiin\\Patterns\\Adapter\\": ""
+        }
+    },
+    "config": {
+        "bin-dir": "bin/"
+    }
+}
