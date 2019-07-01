@@ -1,0 +1,25 @@
+{
+    "name": "harlequiin/abstract-factory",
+    "description": "Abstract Factory pattern",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Maris Udris",
+            "email": "harlequiin@protonmail.com"
+        }
+    ],
+    "require": {},
+    "require-dev": {
+        "psy/psysh": "*"
+    },
+
+    "autoload": {
+        "psr-4": {
+            "harlequiin\\Patterns\\AbstractFactory\\": ""
+        }
+    },
+    "config": {
+        "bin-dir": "bin/"
+    }
+}
