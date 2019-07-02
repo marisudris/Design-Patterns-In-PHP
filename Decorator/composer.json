@@ -1,0 +1,26 @@
+{
+    "name": "harlequiin/decorator",
+    "description": "Decorator pattern",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Maris Udris",
+            "email": "harlequiin@protonmail.com"
+        }
+    ],
+    "require": {},
+    "require-dev": {
+        "psy/psysh": "*",
+        "phpunit/phpunit": "^8.0"
+    },
+
+    "autoload": {
+        "psr-4": {
+            "harlequiin\\Patterns\\Decorator\\": ""
+        }
+    },
+    "config": {
+        "bin-dir": "bin/"
+    }
+}
