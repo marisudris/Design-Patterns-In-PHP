@@ -27,7 +27,7 @@ class PageController
         return $this;
     }
 
-    public function setData(string $data): self
+    public function updateData(string $data): self
     {
         $this->data = $data;
         $this->notify();

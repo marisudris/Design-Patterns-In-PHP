@@ -25,6 +25,6 @@ class PageControllerTest extends TestCase
 
         $controller->attach($view1);
         $controller->attach($view2);
-        $controller->setData($data);
+        $controller->updateData($data);
     }
 }
