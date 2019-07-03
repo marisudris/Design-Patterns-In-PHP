@@ -17,7 +17,7 @@
 
     "autoload": {
         "psr-4": {
-            "harlequiin\\Patterns\\Decorator\\": ""
+            "harlequiin\\Patterns\\Decorator\\": "src/"
         }
     },
     "config": {

@@ -2,7 +2,7 @@
 
 namespace harlequiin\Patterns\Decorator;
 
-abstract class TextDecorator implements TextWriterInterface
+abstract class AbstractTextDecorator implements TextWriterInterface
 {
     /**
      * @var TextWriterInterface

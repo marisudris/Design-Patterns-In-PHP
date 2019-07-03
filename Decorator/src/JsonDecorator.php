@@ -3,10 +3,10 @@ declare(strict_types=1);
 
 namespace harlequiin\Patterns\Decorator;
 
-class HtmlDecorator extends TextDecorator
+class JsonDecorator extends AbstractTextDecorator
 {
     public function write(): string
     {
-        return "<div>". $this->component->write() . "</div>";
+        return \json_encode(["text" => $this->component->write()]);
     }
 }
