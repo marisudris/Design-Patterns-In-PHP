@@ -5,5 +5,5 @@ namespace harlequiin\Patterns\Observer;
 
 interface ViewInterface
 {
-    public function render(): void;
+    public function render(string $data): void;
 }
