@@ -4,7 +4,8 @@ declare(strict_types=1);
 namespace harlequiin\Patterns\Decorator;
 
 /**
- * Component interface for the objects that 
+ * Component.
+ * Defines an interface for objects that 
  * can have responsibilities added to them 
  * dynamically.
  */

@@ -2,6 +2,12 @@
 
 namespace harlequiin\Patterns\Decorator;
 
+/**
+ * Decorator base class.
+ * Maintains a reference to a Component object
+ * and defines an interface that conforms to a 
+ * Component's interface
+ */
 abstract class AbstractTextDecorator implements TextWriterInterface
 {
     /**
