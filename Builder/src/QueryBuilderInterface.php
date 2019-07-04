@@ -12,10 +12,11 @@ interface QueryBuilderInterface
 {
     public function select(string ...$fields): self;
     public function update(string $table): self;
-    public function delete(string $table): self;
-    public function set(string $field, string $value): self;
+    public function delete(): self;
+    public function from(string $table): self;
+    public function set(string $field): self;
     public function where(string $field, string $comparison, string $value): self;
     public function equalTo(string $value): self;
     public function limit(int $value): self;
-    public function getSql(): string;
+    public function getQuery(): string;
 }
