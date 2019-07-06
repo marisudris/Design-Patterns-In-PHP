@@ -3,6 +3,11 @@ declare(strict_types=1);
 
 namespace harlequiin\Patterns\Bridge;
 
+/**
+ * Abstraction.
+ * Defines the Abstraction's interface.
+ * Maintains to an object of type Implementator (RendererInterface).
+ */
 abstract class AbstractPage
 {
     /**

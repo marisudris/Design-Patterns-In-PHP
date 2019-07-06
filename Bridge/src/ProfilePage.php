@@ -3,6 +3,10 @@ declare(strict_types=1);
 
 namespace harlequiin\Patterns\Bridge;
 
+/**
+ * Refined Abstraction.
+ * Extends the interface defined by Abstraction.
+ */
 class ProfilePage extends AbstractPage
 {
 

@@ -3,6 +3,14 @@ declare(strict_types=1);
 
 namespace harlequiin\Patterns\Bridge;
 
+/**
+ * Concrete Implementator.
+ * Implements the Implementator interface and defines
+ * it's concrete implementation.
+ *
+ * (Very) basic XML renderer based on arbitrary rules
+ * by author.
+ */
 class XmlRenderer implements RendererInterface
 {
     public function renderHeader(string $title): string
