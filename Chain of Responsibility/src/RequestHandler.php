@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace harelquiin\Patterns\ChainOfResponsibility;
+namespace harlequiin\Patterns\ChainOfResponsibility;
 
 use Psr\Http\Message\ServerRequestInterface;
 use Psr\Http\Message\ResponseInterface;

@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace harelquiin\Patterns\ChainOfResponsibility;
+namespace harlequiin\Patterns\ChainOfResponsibility;
 
 use Psr\Http\Message\ServerRequestInterface;
 use Psr\Http\Message\ResponseInterface;
@@ -17,5 +17,5 @@ abstract class AbstractMiddleware implements MiddlewareInterface
 {
     public function process(ServerRequestInterface $request, RequestHandlerInterface $handler): ResponseInterface
     {
-        return $this->handler->handle($request);
+        return $handler->handle($request);
     }

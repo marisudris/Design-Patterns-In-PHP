@@ -13,7 +13,7 @@ use Psr\Http\Message\ResponseFactoryInterface;
  * Defines default behavior for middlewares which is to delegate
  * the request handling to RequestHandler and return a Response from it.
  */
-class AuthorizationMiddleware extends AbstractMiddleware
+class NotFoundHandler extends RequestHandlerInterface
 {
     /**
      * @var ResponseFactoryInterface
@@ -25,16 +25,8 @@ class AuthorizationMiddleware extends AbstractMiddleware
         $this->responseFactory = $responseFactory;
     }
 
-    public function process(ServerRequestInterface $request, RequestHandlerInterface $handler): ResponseInterface
+    public function handle(ServerRequestInterface $request): ResponseInterface
     {
-        if (!$this->isAuthorized($request)) {
-            return $this->responseFactory->createResponse(403);
-        }
-        return $handler->handle($request);
-    }
-
-    private function isAuthorized(ServerRequestInterface $request)
-    {
-        // process if can be authorized
+        return $this->responseFactory->createResponse(404);
     }
 }

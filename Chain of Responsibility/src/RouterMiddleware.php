@@ -11,23 +11,18 @@ use Psr\Http\Server\RequestHandlerInterface;
  * Concrete Middleware.
  *
  */
-class CacheMiddleware extends AbstractMiddleware
+class RouterMiddleware extends AbstractMiddleware
 {
     public function process(ServerRequestInterface $request, RequestHandlerInterface $handler): ResponseInterface
     {
-        if (!$this->isCached($request)) {
-            $this->cache($request);
+        if ($this->routeExists($request)) {
+            return $this->dispatch($request);
         }
         return $handler->handle($request);
     }
 
-    private function isCached(ServerRequestInterface $request)
+    private function dispatch(ServerRequestInterface $request): ResponseInterface 
     {
-        // determine if in cache
-    }
-
-    private function cache(ServerRequestInterface $request)
-    {
-        // cache the request object info
+        // call the proper handler (controller) and return a response
     }
 }
