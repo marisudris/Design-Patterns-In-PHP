@@ -3,7 +3,7 @@ declare(strict_types=1);
 
 namespace harlequiin\Patterns\AbstractFactory;
 
-abstract class Pen
+interface Validator
 {
-    abstract public function write();
+    public function validate(string $str): bool;
 }
