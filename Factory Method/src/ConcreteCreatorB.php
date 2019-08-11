@@ -3,10 +3,10 @@ declare(strict_types=1);
 
 namespace harlequiin\Patterns\FactoryMethod;
 
-class ConcreteCreator implements CreatorInterface
+class ConcreteCreatorB extends Creator
 {
     public function createProduct(): Product
     {
-        return new ConcreteProduct();
+        return new ConcreteProductB();
     }
 }

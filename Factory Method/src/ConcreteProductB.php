@@ -3,7 +3,7 @@ declare(strict_types=1);
 
 namespace harlequiin\Patterns\FactoryMethod;
 
-class ConcreteProduct extends Product
+class ConcreteProductB implements Product
 {
     public function process()
     {

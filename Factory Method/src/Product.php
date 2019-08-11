@@ -3,7 +3,7 @@ declare(strict_types=1);
 
 namespace harlequiin\Patterns\FactoryMethod;
 
-abstract class Product
+interface Product
 {
-    abstract public function process();
+    public function process();
 }
