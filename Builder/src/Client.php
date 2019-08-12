@@ -9,15 +9,18 @@ use harlequiin\Patterns\Builder\MysqlQueryBuilder;
  * because the client code needs different queries every time, 
  * so the sequence of the building steps cannot be easily reused.
  */
-
-function client(QueryBuilderInterface $builder) 
+class App
 {
-    // ....code...
-    $builder->select('first_name', 'last_name')
-            ->from('employee')
-            ->where("age", "<", "30")
-            ->getQuery();
-    // ...code...
+    public function run(QueryBuilderInterface $builder) 
+    {
+        // ....code...
+        $builder->select('first_name', 'last_name')
+                ->from('employee')
+                ->where("age", "<", "30")
+                ->getQuery();
+        // ...code...
+    }
 }
 
-client(new MysqlQueryBuilder());
+$app = new App();
+$app->run(new MysqlQueryBuilder());
