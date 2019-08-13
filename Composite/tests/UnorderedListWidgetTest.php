@@ -9,11 +9,8 @@ class UnorderedListWidgetTest extends TestCase
     public function testRendersUnorderedList()
     {
         $listWidget = new UnorderedListWidget();
+        $listWidget->render();
 
-        $this->assertEquals(
-            "<ul><li>One</li><li>Two</li><li>Three</li></ul>",
-            $listWidget->render(),
-            "UnorderedListWidget should return an unordered list of three elements"
-        );
+        $this->expectOutputString("<ul><li>One</li><li>Two</li><li>Three</li></ul>");
     }
 }

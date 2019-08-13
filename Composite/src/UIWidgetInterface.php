@@ -9,5 +9,5 @@ namespace harlequiin\Patterns\Composite;
  */
 interface UIWidgetInterface
 {
-    public function render(): string;
+    public function render(): void;
 }

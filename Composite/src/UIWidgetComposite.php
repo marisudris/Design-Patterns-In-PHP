@@ -19,17 +19,17 @@ class UIWidgetComposite implements UIWidgetInterface
         $this->uiwidgets = new \SplObjectStorage();
     }
 
-    public function render(): string
+    public function render(): void
     {
-        $result = "";
+        ob_start();
         foreach ($this->uiwidgets as $widget) {
-            $result .= "<br>" . $widget->render();
-        }
+            $widget->render();
+            echo "<br>";
+        } 
+        // remove the last line break
+        $result = preg_replace("/<br>$/u", "", ob_get_clean());
 
-        // remove the starting '<br>'
-        $result = substr($result, 4);
-
-        return $result;
+        echo $result;
     }
 
     public function getChildren(): array

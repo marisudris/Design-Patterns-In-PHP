@@ -7,8 +7,8 @@ namespace harlequiin\Patterns\Composite;
  */
 class UnorderedListWidget implements UIWidgetInterface
 {
-    public function render(): string
+    public function render(): void
     {
-        return "<ul><li>One</li><li>Two</li><li>Three</li></ul>";
+        echo "<ul><li>One</li><li>Two</li><li>Three</li></ul>";
     }
 }

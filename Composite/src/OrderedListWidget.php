@@ -7,8 +7,8 @@ namespace harlequiin\Patterns\Composite;
  */
 class OrderedListWidget implements UIWidgetInterface
 {
-    public function render(): string
+    public function render(): void
     {
-        return "<ol><li>A</li><li>B</li><li>C</li></ol>";
+        echo "<ol><li>A</li><li>B</li><li>C</li></ol>";
     }
 }
