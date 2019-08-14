@@ -7,10 +7,14 @@ namespace harlequiin\Patterns\Decorator;
  * Conrete Decorator.
  * Adds responsibilities to the Component.
  */
-class JsonDecorator extends AbstractTextDecorator
+class TextCapitalizer extends TextDecorator
 {
     public function write(): string
     {
-        return \json_encode(["text" => $this->component->write()]);
+        return mb_convert_case(
+            parent::write(),
+            MB_CASE_UPPER,
+            "utf-8"
+        );
     }
 }

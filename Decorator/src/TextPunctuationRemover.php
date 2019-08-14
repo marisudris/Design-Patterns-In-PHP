@@ -4,13 +4,13 @@ declare(strict_types=1);
 namespace harlequiin\Patterns\Decorator;
 
 /**
- * Conrete Decorator.
+ * Concrete Decorator.
  * Adds responsibilities to the Component.
  */
-class HtmlDecorator extends AbstractTextDecorator
+class TextPunctuationRemover extends TextDecorator
 {
     public function write(): string
     {
-        return "<div>". $this->component->write() . "</div>";
+        return preg_replace("/\pP/u", "", parent::write());
     }
 }

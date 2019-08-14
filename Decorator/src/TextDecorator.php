@@ -8,7 +8,7 @@ namespace harlequiin\Patterns\Decorator;
  * and defines an interface that conforms to a 
  * Component's interface
  */
-abstract class AbstractTextDecorator implements TextWriterInterface
+class TextDecorator implements TextWriterInterface
 {
     /**
      * @var TextWriterInterface
@@ -20,5 +20,8 @@ abstract class AbstractTextDecorator implements TextWriterInterface
         $this->component = $component;
     }
 
-    abstract public function write(): string;
+    public function write(): string
+    {
+        return $this->component->write();
+    }
 }
