@@ -16,7 +16,7 @@
 
     "autoload": {
         "psr-4": {
-            "harlequiin\\Patterns\\Adapter\\": ""
+            "harlequiin\\Patterns\\Adapter\\": "src/"
         }
     },
     "config": {
