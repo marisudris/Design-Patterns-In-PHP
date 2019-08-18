@@ -4,12 +4,12 @@ declare(strict_types=1);
 namespace harlequiin\Patterns\Bridge;
 
 /**
- * Concrete Implementator.
- * Implements the Implementator interface and defines
+ * Concrete Implementor.
+ * Implements the Implementor interface and defines
  * it's concrete implementation.
  *
- * (Very) basic XML renderer based on arbitrary rules
- * by author.
+ * (Very) basic XML renderer based on arbitrary DTD
+ * by the author.
  */
 class XmlRenderer implements RendererInterface
 {

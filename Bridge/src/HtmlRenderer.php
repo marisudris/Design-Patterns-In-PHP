@@ -4,13 +4,11 @@ declare(strict_types=1);
 namespace harlequiin\Patterns\Bridge;
 
 /**
- * Concrete Implementator.
- * Implements the Implementator interface and defines
+ * Concrete Implementor.
+ * Implements the Implementor interface and defines
  * it's concrete implementation.
  *
  * (Very) basic HTML markup renderer.
- *  Together with XmlRenderer probably could be refactored
- *  to avoid some repeated code.
  */
 class HtmlRenderer implements RendererInterface
 {
