@@ -48,4 +48,11 @@ class PageController
             $view->render($this->data);
         }
     }
+
+    public function detach(ViewInterface $view): self
+    {
+        $this->views->detach($view);
+
+        return $this;
+    }
 }
