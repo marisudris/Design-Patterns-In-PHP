@@ -7,7 +7,7 @@ namespace harlequiin\Patterns\Strategy;
  * Strategy interface.
  * All concrete strategies implement this interface.
  */
-interface WriterStrategyInterface
+interface WriterStrategy
 {
     public function write(string $data): string;
 }

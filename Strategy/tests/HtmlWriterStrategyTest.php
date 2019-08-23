@@ -1,19 +1,19 @@
 <?php
 declare(strict_types=1);
 
-use harlequiin\Patterns\Strategy\HtmlWriterStrategy;
+use harlequiin\Patterns\Strategy\HtmlWriter;
 use PHPUnit\Framework\TestCase;
 
-class HtmlWriterStrategyTest extends TestCase
+class HtmlWriterTest extends TestCase
 {
     public function testHtmlWriterWrapsDataInHtmlDivTags()
     {
-        $htmlWriter = new HtmlWriterStrategy();
+        $htmlWriter = new HtmlWriter();
 
         $this->assertEquals(
             "<div>data</div>",
             $htmlWriter->write("data"),
-            "HtmlWriterStrategy should wrap 'data' in div tags"
+            "HtmlWriter should wrap 'data' in div tags"
         );
     }
 }

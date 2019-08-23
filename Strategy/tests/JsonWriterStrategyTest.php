@@ -1,19 +1,19 @@
 <?php
 declare(strict_types=1);
 
-use harlequiin\Patterns\Strategy\JsonWriterStrategy;
+use harlequiin\Patterns\Strategy\JsonWriter;
 use PHPUnit\Framework\TestCase;
 
-class JsonWriterStrategyTest extends TestCase
+class JsonWriterTest extends TestCase
 {
     public function testJsonWriterWrapsDataInAJsonObject()
     {
-        $htmlWriter = new JsonWriterStrategy();
+        $htmlWriter = new JsonWriter();
 
         $this->assertEquals(
             '{"text":"data"}',
             $htmlWriter->write("data"),
-            "JsonWriterStrategy should include data in a
+            "JsonWriter should include data in a
             JSON objets 'text' field"
         );
     }
