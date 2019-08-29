@@ -26,24 +26,28 @@ abstract class AbstractView
         $this->rawData = $data; 
     }
 
-    public function render()
+    /**
+     * Out template method.
+     * We declare it "final" since it must not be overriden
+     */
+    final public function render()
     {
-        $this->doSanitizeDataForHtml();
-        echo $this->generateHtml();
+        $this->sanitizeData();
+        echo $this->generateMarkup();
     }
 
     /**
      * Can be overridden using other html escaping 
      * or sanitization facilities.
      */
-    protected function doSanitizeDataForHtml(){
+    protected function sanitizeData(){
         foreach ($this->rawData as $data) {
             $this->sanitizedData[] = htmlentities($data);
         }
     }
 
     /**
-     * should output generated HTML
+     * Should output generated HTML
      */
-    abstract protected function generateHtml(): string;
+    abstract protected function generateMarkup(): string;
 }

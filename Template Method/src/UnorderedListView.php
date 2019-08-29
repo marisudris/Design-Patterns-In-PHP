@@ -8,9 +8,9 @@ namespace harlequiin\Patterns\TemplateMethod;
  * Implements the primitive operations to carry out
  * subclass-specific steps of the algorithm
  */
-class UlView extends AbstractView
+class UnorderedListView extends AbstractView
 {
-    protected function generateHtml(): string
+    protected function generateMarkup(): string
     {
         $html = "<ul>";
         foreach ($this->sanitizedData as $data) {

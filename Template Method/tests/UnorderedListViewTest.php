@@ -1,14 +1,14 @@
 <?php
 declare(strict_types=1);
 
-use harlequiin\Patterns\TemplateMethod\UlView;
+use harlequiin\Patterns\TemplateMethod\UnorderedListView;
 use PHPUnit\Framework\TestCase;
 
-class UlViewTest extends TestCase
+class UnorderedListViewTest extends TestCase
 {
     public function testOutputsUnorderedListMarkup()
     {
-        $view = new UlView([
+        $view = new UnorderedListView([
             "first_name" => "Māris",
             "last_name" => "Ūdris",
         ]);
