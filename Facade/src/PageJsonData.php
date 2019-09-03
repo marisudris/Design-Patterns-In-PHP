@@ -13,7 +13,7 @@ use harlequiin\Patterns\Facade\Subsystem\JsonEncoder;
  * for a request, delegates requests to appropriate
  * susbsystem classes.
  */
-class HtmlToJsonConverter
+class PageJsonData
 {
     /**
      * @var PageDownloader
@@ -29,17 +29,23 @@ class HtmlToJsonConverter
      * @var JsonEncoder
      */
     protected $jsonEncoder;
+
     public function __construct()
     {
-        $this->PageDownloader = new PageDownloader();
+        $this->downloader = new PageDownloader();
         $this->parser = new HtmlParser(); 
+        $this->jsonEncoder = new JsonEncoder();
     }
 
-    public function convert(string $page): string
+    /**
+     * @throws Exception
+     */
+    public function get(string $page): string
     {
-        if (filter_var($page, FILTER_VALIDATE_URL)) {
-            $page = $this->downloader->download($page);
+        if (!filter_var($page, FILTER_VALIDATE_URL)) {
+            throw new \Exception("Invalid URL");
         } 
+        $page = $this->downloader->download($page);
         $parsedTree = $this->htmlParser->parse($page);
         $json = $this->JsonEncoder->encodeHtmlTree($parsedTree);
 

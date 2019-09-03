@@ -5,7 +5,7 @@ namespace harlequiin\Patterns\Facade\Subsystem;
 
 class PageDownloader
 {
-    public function download(string $url)
+    public function download(string $url): string
     {
-       // downloads the page 
+       return file_get_contents($url);
     }
