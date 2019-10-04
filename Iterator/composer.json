@@ -1,0 +1,25 @@
+{
+    "name": "harlequiin/iterator",
+    "description": "Iterator pattern",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Maris Udris",
+            "email": "harlequiin@protonmail.com"
+        }
+    ],
+    "require": {},
+    "require-dev": {
+        "phpunit/phpunit": "^8.0"
+    },
+
+    "autoload": {
+        "psr-4": {
+            "harlequiin\\Patterns\\Iterator\\": "src/"
+        }
+    },
+    "config": {
+        "bin-dir": "bin/"
+    }
+}
