@@ -16,9 +16,9 @@ Use the Factory Method pattern when:
 
 ![General UML diagram of the Factory Method pattern][1]
 
-Keep in mind that the Creator's primary purpose is not creating Products.
+Keep in mind that the _Creator's_ primary purpose isn't necessarily _only_ _Product_ creation.
 Quite often it will contain it's own business logic that simply relies on 
-Product objects created by it. Subclasses can change that logic by changing the
-Product type they create and operate on.
+_Product_ objects created by it. Subclasses can change that logic by changing the
+_Product_ type they create and operate on.
 
 [1]: https://i.ibb.co/1nQLs0N/Factory-Method.png
