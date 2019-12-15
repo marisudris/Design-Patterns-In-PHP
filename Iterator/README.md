@@ -35,7 +35,32 @@ Also known as **Cursor**
 
 ![Our example UML diagram][2]
 
-** ** ...
+**Iterator**
+**IteratorAggregate** is our _Aggregate_ interface. PHP provides it natively
+and we can take advantage of it. It declares a single _getIterator_ method that
+we must implement. As the name implies - an _Aggregate_ can really return
+multiple types of iterators - we could define _getIterator_ as our our "main"
+iterator provider and then add couple of other similar methods for other types
+of iterators - like, one that goes reverse, another one that filters the
+elements etc.
+**MessageIterator** is our _ConcreteIterator_ which accesses and iterates over
+a collection of _Message_ objects from _MessageAggregate_. PHP provides
+a native _Iterator_ interface and our **MessageIterator** implements it.
+PHP _Iterator_ interface declares 5 methods that we implement here:
+- _current_: returns the current element in the current iteration.
+- _key_: returns the key (pointer) of the current element in the iteration.
+- _next_: advances the pointer one position forward.
+- _rewind_: resets the iterator's pointer to it's initial position - in our
+  example it's simply 0.
+- _valid_: returns _true_ if the pointer currently references an element,
+  _false_ if there's no current element at the current position, in other words
+  - our iteration has finished.
+**MessageAggregate** is our _ConcreteAggregate_ class. It implements the PHP's native
+_IteratorAggregate_ interface and implements it's _getIterator_ method. It
+defines some additional methods like _addMessage_ and _getMessages_ in case we
+simply want them all at once in a single array. We could think of and add some
+more methods that a typical _collection_ type class would need, but for the
+sake of simplicity I'll leave it as it is.
 
 [1]: https://i.ibb.co/nMwfwQw/Iterator.png
 [2]:
