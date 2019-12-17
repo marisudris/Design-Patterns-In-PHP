@@ -19,6 +19,7 @@ class MysqlQueryBuilder implements QueryBuilder
 
     public function select(string ...$fields): QueryBuilder
     {
+        $this->reset();
         $this->query = "SELECT ";
 
         if ($fields[0] == "*") {
@@ -40,12 +41,14 @@ class MysqlQueryBuilder implements QueryBuilder
 
     public function update(string $table): QueryBuilder
     {
+        $this->reset();
         $this->query .= "UPDATE `{$table}` ";
         return $this;
     }
 
     public function delete(): QueryBuilder
     {
+        $this->reset();
         $this->query .= "DELETE ";
         return $this;
     }
