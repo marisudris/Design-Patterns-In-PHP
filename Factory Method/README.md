@@ -3,7 +3,7 @@
 Defines an interface for creating an object, but lets the subclass decide which
 class to instantiate.
 
-####Use the Factory Method pattern when:  
+#### Use the Factory Method pattern when:  
 
 - a _class_ doesn't know beforehand the exact (concrete) class of objects it's gonna create.
 - a class wants its subclasses to specify the objects it creates.
@@ -39,16 +39,16 @@ class to instantiate.
 
 ![Our example UML diagram][2]
 
-In our example the **DocumentLoader** provides our _Creator_ class which deals
-with document operations and also provides our abstract factory method
-_getDocument_ which must be implemented by subclasses.  
-**HtmlDocumentLoader**, **JsonDocumentLoader** are our _Concrete Creators_ and
-provide factory methods for specific types of documents on top of all the base
-operations.  
-**Document** provides a base _Product_ interface which all our products must
-implement.  
-**HtmlDocument**, **JsonDocument** are our _Concrete Products_ and implement
-the _Document_ interface.
+- **DocumentLoader** is our _Creator_ class which deals
+  with document operations and also provides our abstract factory method
+  _getDocument_ which must be implemented by subclasses.  
+- **HtmlDocumentLoader**, **JsonDocumentLoader** are our _Concrete Creators_ and
+  provide factory methods for specific types of documents on top of all the base
+  operations.  
+- **Document** provides a base _Product_ interface which all our products must
+  implement.  
+- **HtmlDocument**, **JsonDocument** are our _Concrete Products_ and implement
+  the _Document_ interface.
 
 [1]: https://i.ibb.co/1nQLs0N/Factory-Method.png
 [2]: https://i.ibb.co/dWmvYV7/Factory-Method-Example.png
