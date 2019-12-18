@@ -5,7 +5,7 @@ class to instantiate.
 
 #### Use the Factory Method pattern when:  
 
-- a _class_ doesn't know beforehand the exact (concrete) class of objects it's gonna create.
+- a class doesn't know beforehand the exact (concrete) class of objects it's gonna create.
 - a class wants its subclasses to specify the objects it creates.
 - you want to provide the users of your code with a way to extend you
   project/library's internal components.
@@ -27,9 +27,9 @@ class to instantiate.
   Method_ patttern helps to decouple this logic from concrete product class
   implementations. _Concrete Creators_ can decide on those and use the logic on
   them. Clients can then communicate to these creators through the more abstract
-  _Creator_ interface without knowing anything about these _Concrete Products_.
+  _Creator_ and _Product_ interfaces without knowing anything about these _Concrete Products_.
 - **ConcreteCreatorA**, **ConcreteCreatorB**: implements/overrides the base
-  factory method to return a _Concrete Product_ instance.
+  factory method to return an instance of a _Concrete Product_.
 - **Product**: declares the interface common to all products created by the
   _Creator_ and its subclasses.
 - **ConcreteProductA**, **ConcreteProductB**: implements the _Product_
@@ -43,12 +43,12 @@ class to instantiate.
   with document operations and also provides our abstract factory method
   _getDocument_ which must be implemented by subclasses.  
 - **HtmlDocumentLoader**, **JsonDocumentLoader** are our _Concrete Creators_ and
-  provide factory methods for specific types of documents on top of all the base
-  operations.  
+  provide implemented factory methods for concrete documents on top of all 
+  the inherited base operations.
 - **Document** provides a base _Product_ interface which all our products must
   implement.  
 - **HtmlDocument**, **JsonDocument** are our _Concrete Products_ and implement
   the _Document_ interface.
 
 [1]: https://i.ibb.co/1nQLs0N/Factory-Method.png
-[2]: https://i.ibb.co/SVJVsTX/Factory-Method-Example.png
+[2]: https://i.ibb.co/CQtQdCN/Factory-Method-Example.png
