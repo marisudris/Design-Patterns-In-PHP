@@ -51,4 +51,4 @@ class to instantiate.
   the _Document_ interface.
 
 [1]: https://i.ibb.co/1nQLs0N/Factory-Method.png
-[2]: https://i.ibb.co/dWmvYV7/Factory-Method-Example.png
+[2]: https://i.ibb.co/SVJVsTX/Factory-Method-Example.png
