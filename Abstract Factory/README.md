@@ -20,8 +20,8 @@ between objects from the same family. Hence the pattern is also know as **Kit** 
 
 #### Participants:
 
-- **Abstract Factory** interface fixes the set of products that can be created.
-  Adding a new product means changing the Abstract Factory class and all Concrete
+- **Abstract Factory** interface fixes the set of products that can be created.  
+  Adding a new subtype of product means changing the Abstract Factory class and all Concrete
   Factories to accommodate the new Product type.  
   Hence you should note that _Abstract Factory_ pattern makes it easy to add a new
   _Concrete Product_ of an existing type, while it makes it hard to introduce a new
@@ -50,8 +50,8 @@ between objects from the same family. Hence the pattern is also know as **Kit** 
 - **AllCapsFilterFactory** and **SmallCapsFilterFactory** are our _Concrete
   Factories_ which both create the appropriate implementations of **Validator**
   and **Sanitizer** which are our _Abstract Products_.  
-  **SmallCapsValidator** and **SmallCapsSanitizer** together make up a specific family of
-- _Concrete Products_ (which are created the **SmallCapsFilterFactory**).  
+- **SmallCapsValidator** and **SmallCapsSanitizer** together make up a specific family of
+  _Concrete Products_ (which are created the **SmallCapsFilterFactory**).  
   Similarly - **AllCapsValidator** and **AllCapsSanitizer** together make up
   another family of _Concrete Products_ which are created by a different
   _Concrete Factory_ - **AllCapsFilterFactory**.  
