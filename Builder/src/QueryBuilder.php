@@ -8,7 +8,7 @@ namespace harlequiin\Patterns\Builder;
  * Specifies an abstract interface for creating
  * parts of a product object.
  */
-interface QueryBuilderInterface
+interface QueryBuilder
 {
     public function select(string ...$fields): self;
     public function update(string $table): self;
