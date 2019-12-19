@@ -1,6 +1,6 @@
 ## Builder
 
-Separates the construction process of a complex object from its final representation (configuration)
+Separates the construction process of a complex object from its final representation (configuration),
 so that the same construction process can create different representations.  
 _Imagine you're building a house - you can make a wooden house, brick house
 etc. - aka different representations of the same basic object_.  
@@ -11,13 +11,14 @@ Object creation is organized into a series of steps - this is how Builder patter
 from all the other creational patterns - object creation is more granular.
 
 #### Use the Builder pattern when:
+
 - you want to separate out the algorithm for creating a complex object from the
-  parts and implementation that makes up the object, and their assembly.
+  parts and implementation that makes up the object.
 - construction process should vary and allow differrent representations
   for the same type of object.
 - you find yourself having a product constructor that has too many optional
   parameters for all the numerous options it can have. In this situation it's 
-  best to delegate the object construction and assemly to a separate _Builder_ class.
+  best to delegate the object construction and assembly to a separate _Builder_ class.
 - you find yourself defining numerous subclasses just to accommodate all the
   possible variations for the final product. Adding a new feature will require
   growing and bloating your class hierarchy even more.
@@ -27,16 +28,18 @@ from all the other creational patterns - object creation is more granular.
 ![General UML diagram of the Builder pattern][1]
 
 #### Participants:
+
 - **Builder**: specifies an abstract interface for product construction.
   Declares steps that are common to all builders. It's best to introduce
   _Builder_ only when your objects (products) are quite complex and may require
-  complex configuration.
+  complex configuration. Use other creational patterns, if this is not the
+  case.
 - **ConcreteBuilder1**, **ConcreteBuilder2**: provides different implementations of the _Builder_
   interface. Constructs and assembles a product while keeping track of the
   current product's state. Provides an interface for retrieving the product.  
   Products don't have to follow the same interface - hence the product
-  retrieval is not defined in the _Builder_ interface itself, since it doesn't know
-  what types of products will be built. For these reasons the _Client_ itself will
+  retrieval is not defined in the _Builder_ interface itself, it doesn't know
+  what types of products will be built by it. For these reasons the _Client_ itself will
   usually fetch the created product directly from the _ConcreteBuilder_ after it's
   finished building.
 - **Director**: constructs the product using the _Builder_ interface. Defines
@@ -56,17 +59,17 @@ from all the other creational patterns - object creation is more granular.
 
 ![Our example UML diagram][2]
 
-In our example the **QueryBuilder** provides our _Builder_ interface.  
-**MySqlQueryBuilder** is our _ConcreteBuilder_ and implements the _Builder_
-interface. Our _Product_ in this case is a simple SQL query string that the MySqlQueryBuilder
-constructs.
-The **App** class here acts both as our _Client_ and _Director_. It composes
-the _QueryBuilder_ and uses it to construct queries. We don't need a _Director_
-because query string building is a highly variable process - there are endless
-options of how to build one in an app and this is why the _Client_ uses the _ConcreteBuilder_.  
-Simple SELECT, DELETE etc. statements are common and we _might_ have used a _Director_
-for those, but it's fairly trivial for a _Client_ to call these directly on the
-_ConcreteBuilder_.
+- **QueryBuilder** provides our _Builder_ interface.  
+- **MySqlQueryBuilder** is our _ConcreteBuilder_ and implements the _Builder_
+  interface. Our _Product_ in this case is a simple SQL query string that the MySqlQueryBuilder
+  constructs step by step.
+- **App** class here acts both as our _Client_ and _Director_. It composes
+  the _QueryBuilder_ and uses it to construct queries. We don't need a _Director_
+  because query string building is a highly variable process - there are endless
+  options of how to build one in an app and this is why the _Client_ uses the _ConcreteBuilder_ directly.  
+  Some simple types of SELECT, UPDATE, DELETE statement are common and we _might_ have used a _Director_
+  for those, but it's fairly trivial for a _Client_ to call these directly on the
+  _ConcreteBuilder_.
 
 [1]: https://i.ibb.co/5vYf87M/Screenshot-2019-08-12-02-59-41.png
 [2]: https://i.ibb.co/BNdqm3G/Builder-Example.png
