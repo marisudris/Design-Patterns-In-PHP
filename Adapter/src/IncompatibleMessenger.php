@@ -5,6 +5,7 @@ namespace harlequiin\Patterns\Adapter;
 
 /**
  * Service.
+ *
  * Our incompatible 3rd party service that we need to adapt.
  */
 class IncompatibleMessenger

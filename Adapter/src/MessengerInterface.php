@@ -5,6 +5,7 @@ namespace harlequiin\Patterns\Adapter;
 
 /**
  * Target interface.
+ *
  * The interface our domain logic uses and understands.
  */
 interface MessengerInterface

@@ -5,6 +5,7 @@ namespace harlequiin\Patterns\Adapter;
 
 /**
  * Client.
+ *
  * Implements our (very trivial) domain logic.
  */
 class App
