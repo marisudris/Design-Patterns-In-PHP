@@ -9,9 +9,10 @@ use harlequiin\Patterns\Facade\Subsystem\JsonEncoder;
 
 /**
  * Facade.
+ *
  * Knows which subsystem classes are responsible
- * for a request, delegates requests to appropriate
- * susbsystem classes.
+ * for handling client request, delegates requests to appropriate
+ * subsystem classes.
  */
 class PageJsonData
 {

@@ -3,6 +3,11 @@ declare(strict_types=1);
 
 namespace harlequiin\Patterns\Facade\Subsystem;
 
+/**
+ * Subsystem class.
+ *
+ * Represents a parsed HTML tree.
+ */
 class HtmlTree
 {
     /**
