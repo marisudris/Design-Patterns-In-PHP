@@ -4,7 +4,9 @@ declare(strict_types=1);
 namespace harlequiin\Patterns\Composite;
 
 /**
- * Composite impementing the Component interface
+ * Composite.
+ *
+ * Impements the Component interface.
  */
 class UIWidgetComposite implements UIWidgetInterface
 {

@@ -3,6 +3,11 @@ declare(strict_types=1);
 
 namespace harlequiin\Patterns\Composite;
 
+/**
+ * Client.
+ *
+ * Uses the Components through their uniform interface.
+ */
 class App
 {
     /**

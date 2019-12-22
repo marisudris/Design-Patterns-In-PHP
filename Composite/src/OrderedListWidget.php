@@ -3,7 +3,9 @@
 namespace harlequiin\Patterns\Composite;
 
 /**
- * Leaf implementing the Component interface
+ * Leaf.
+ *
+ * Implements the Component interface.
  */
 class OrderedListWidget implements UIWidgetInterface
 {
