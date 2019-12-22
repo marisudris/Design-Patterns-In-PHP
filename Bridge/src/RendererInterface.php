@@ -5,8 +5,9 @@ namespace harlequiin\Patterns\Bridge;
 
 /**
  * Implementor.
+ *
  * Defines the interface for implementation classes, it doesn't
- * have to correspond Abstraction's interface - they can be quite
+ * have to correspond to the Abstraction's interface - they can be quite
  * different.
  * Typically the Implementor interface provides only primitive 
  * operations, and Abstraction defines higher-level operations

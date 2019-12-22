@@ -5,11 +5,11 @@ namespace harlequiin\Patterns\Bridge;
 
 /**
  * Concrete Implementor.
+ *
  * Implements the Implementor interface and defines
  * it's concrete implementation.
- *
  * (Very) basic XML renderer based on arbitrary DTD
- * by the author.
+ * by the author (me).
  */
 class XmlRenderer implements RendererInterface
 {
@@ -53,7 +53,11 @@ class XmlRenderer implements RendererInterface
         foreach ($content as $key => $value) {
             // if key is non-numeric ("associative"), it gets added to the 
             // html string
-            $html .= "<{$tag}>" . (!is_numeric($key) ? (mb_convert_case($key, MB_CASE_TITLE) . ": ") : "") . "${value}</{$tag}>";
+            $html .= "<{$tag}>" .
+                (!is_numeric($key) ?
+                (mb_convert_case($key, MB_CASE_TITLE) . ": ") :
+                "")
+                . "${value}</{$tag}>";
         }
 
         return $html;

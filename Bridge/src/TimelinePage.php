@@ -3,6 +3,7 @@ declare(strict_types=1);
 
 /**
  * Refined Abstraction.
+ *
  * Extends the interface defined by Abstraction.
  */
 namespace harlequiin\Patterns\Bridge;

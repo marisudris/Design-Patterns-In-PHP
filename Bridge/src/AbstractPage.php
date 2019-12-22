@@ -5,6 +5,7 @@ namespace harlequiin\Patterns\Bridge;
 
 /**
  * Abstraction.
+ *
  * Defines the Abstraction's interface.
  * Maintains to an object of type Implementator (RendererInterface).
  */
@@ -16,7 +17,7 @@ abstract class AbstractPage
     protected $renderer;
 
     /*
-     * @var array Page content
+     * @var array page content
      */
     protected $content;
 
