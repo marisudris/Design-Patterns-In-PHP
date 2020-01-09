@@ -3,9 +3,10 @@
 Define a family of algorithms, encapsulate each one, and make them
 interchangeable. Strategy pattern lets algorithm vary independently from the
 clients that use it.  
-Also known as **Policy**
+Also known as **Policy**.
 
 #### Use the Strategy pattern when:
+
 - many related classes in you system differ only in their behavior. You can
   extract the varying behavior into a seperate class hierarchy and reduce all
   the original classes into one.
@@ -24,7 +25,8 @@ Also known as **Policy**
 #### Participants:
 - **Strategy**: declares an interface common to all algorithms(_ConcreteStrategies_).
   Context uses this interface to call on algorithms defined in _ConcreteStrategies_. 
-- **ConcreteStrategy**: implements a variant of the algorithm and the _Strategy_ interface.
+- **ConcreteStrategy**: implements a variant of the algorithm and the _Strategy_
+  interface.
 - **Context**: is configured with and uses the _ConcreteStrategy_ object via
   the _Strategy_ interface.
 - **Client**: creates as specific _ConcreteStrategy_ object and passes it to
@@ -38,16 +40,16 @@ Also known as **Policy**
 
 ![Our example UML diagram][2]
 
-**TextHandler** is our _Context_. If it's been given a _WriterStrategy_ type
-it delegates to it. Otherwise it simply returns the raw data as its default
-behavior.   
-**WriterStrategy** is our _Strategy_ interface. It defines a single _write_
-method that all the writers must implement.  
-**JsonWriter, HtmlWriter** are our _ConcreteStrategies_. They write out the
-text using different writing strategies - one the latter writes out the text as
-html while the former - as a JSON string.  
-**App** acts as the _Client_. It configures the _TextHandler_ with the
-appropriate _WriterStrategy_ and uses it as part of application logic.
+- **TextHandler** is our _Context_. If it's been given a _WriterStrategy_ type
+  it delegates to it. Otherwise it simply returns the raw data as its default
+  behavior.   
+- **WriterStrategy** is our _Strategy_ interface. It defines a single _write_
+  method that all the writers must implement.  
+- **JsonWriter, HtmlWriter** are our _ConcreteStrategies_. They write out the
+  text using different writing strategies - one the latter writes out the text as
+  html while the former - as a JSON string.  
+- **App** acts as the _Client_. It configures the _TextHandler_ with the
+  appropriate _WriterStrategy_ and uses it as part of application logic.
 
 [1]: https://i.ibb.co/d0fddPd/Strategy.png
 [2]: https://i.ibb.co/2htJDw6/Strategy-Example.png 
