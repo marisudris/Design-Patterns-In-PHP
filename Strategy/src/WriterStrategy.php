@@ -4,7 +4,9 @@ declare(strict_types=1);
 namespace harlequiin\Patterns\Strategy;
 
 /**
- * Strategy interface.
+ * Strategy.
+ *
+ * Defines a WriterStrategy interface.
  * All concrete strategies implement this interface.
  */
 interface WriterStrategy

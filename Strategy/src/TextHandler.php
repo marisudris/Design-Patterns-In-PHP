@@ -5,8 +5,8 @@ namespace harlequiin\Patterns\Strategy;
 
 /**
  * Context object.
- * Delegates to the WritingStrategy
- * implementators (strategies) for writing.
+ *
+ * Delegates to the WriterStrategy objects
  */
 class TextHandler
 {
