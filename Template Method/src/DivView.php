@@ -5,8 +5,9 @@ namespace harlequiin\Patterns\TemplateMethod;
 
 /**
  * Concrete Class.
+ *
  * Implements the primitive operations to carry out
- * subclass-specific steps of the algorithm
+ * subclass-specific steps of the algorithm.
  */
 class DivView extends AbstractView
 {

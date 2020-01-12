@@ -5,8 +5,10 @@ namespace harlequiin\Patterns\TemplateMethod;
 
 /**
  * Abstract Class.
- * Defines abstract primitive operations that Concrete 
- * subclasses define to implement steps of an algorithm
+ *
+ * Defines a template method with specific steps which are
+ * all methods themselves and can/must be implemented in 
+ * subclasses.
  */
 abstract class AbstractView
 {
@@ -27,8 +29,8 @@ abstract class AbstractView
     }
 
     /**
-     * Out template method.
-     * We declare it "final" since it must not be overriden
+     * Our template method.
+     * We declare it "final" since it must not be overriden.
      */
     final public function render()
     {
@@ -37,7 +39,7 @@ abstract class AbstractView
     }
 
     /**
-     * Can be overridden using other html escaping 
+     * Can be overridden to use other html escaping 
      * or sanitization facilities.
      */
     protected function sanitizeData(){
@@ -47,7 +49,7 @@ abstract class AbstractView
     }
 
     /**
-     * Should output generated HTML
+     * Should output generated HTML.
      */
     abstract protected function generateMarkup(): string;
 }
