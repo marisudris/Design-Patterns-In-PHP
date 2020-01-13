@@ -3,6 +3,8 @@ declare(strict_types=1);
 
 namespace harlequiin\Patterns\Observer;
 
+use SplObjectStorage;
+
 /**
  * Concrete Subject.
  *
@@ -26,7 +28,7 @@ class PageController
 
     public function __construct()
     {
-        $this->views = new \SplObjectStorage();
+        $this->views = new SplObjectStorage();
     }
 
     public function attach(ViewInterface $view): self
