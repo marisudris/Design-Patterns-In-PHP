@@ -5,8 +5,9 @@ namespace harlequiin\Patterns\Observer;
 
 /**
  * Observer.
- * Defines and updating interface for objects that should be
- * notified of shanges in a Subject
+ *
+ * Defines and interface for observer objects that can be
+ * notified by the Subject to which they've subscribed.
  */
 interface ViewInterface
 {
