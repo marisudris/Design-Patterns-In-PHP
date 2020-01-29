@@ -51,7 +51,7 @@ class to instantiate.
 - **AbstractDocument** provides a base class with some common behavior, including
   constructor, and default implementations for _Product_ methods.  
 - **HtmlDocument**, **JsonDocument** are our _Concrete Products_ and implement
-  the _Document_ interface (by extending the _AbstracttDocument_ base class).
+  the _Document_ interface (by extending the _AbstractDocument_ base class).
 
 [1]: https://i.ibb.co/1nQLs0N/Factory-Method.png
 [2]: https://i.ibb.co/JrqyFbk/Factory-Method-Example.png
