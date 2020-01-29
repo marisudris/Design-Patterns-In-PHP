@@ -3,6 +3,13 @@ declare(strict_types=1);
 
 namespace harlequiin\Patterns\FactoryMethod;
 
+/**
+ * Base Product class.
+ *
+ * Implements the Product (Document) interface and 
+ * provides a default constructor + default implementations
+ * for the Product.
+ */
 abstract class AbstractDocument implements Document
 {
     /**
