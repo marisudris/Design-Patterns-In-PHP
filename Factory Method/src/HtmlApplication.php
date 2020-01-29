@@ -5,8 +5,8 @@ namespace harlequiin\Patterns\FactoryMethod;
 
 class HtmlDocumentLoader extends DocumentLoader
 {
-    public function getDocument(): Document
+    public function createDocument(string $name): Document
     {
-       return new HtmlDocument(); 
+       return new HtmlDocument($name); 
     }
 }

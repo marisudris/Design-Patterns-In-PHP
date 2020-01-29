@@ -3,15 +3,14 @@ declare(strict_types=1);
 
 namespace harlequiin\Patterns\FactoryMethod;
 
-class HtmlDocument implements Document
+class HtmlDocument extends AbstractDocument
 {
-    public function write()
-    {
-        
-    }
-
     public function read(): string
     {
-        
+        return "<html><head><title>" .
+               $this->name . 
+               "</head><body>" .
+                $this->content .
+               "</body>";    
     }
 }
