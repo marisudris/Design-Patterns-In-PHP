@@ -40,16 +40,18 @@ class to instantiate.
 
 ![Our example UML diagram][2]
 
-- **DocumentLoader** is our _Creator_ class which deals
+- **Application** is our _Creator_ class which deals
   with document operations and also provides our abstract factory method -
   _createDocument_, which must be implemented by subclasses.  
-- **HtmlDocumentLoader**, **JsonDocumentLoader** are our _Concrete Creators_ and
+- **HtmlApplication**, **JsonApplication** are our _Concrete Creators_ and
   provide implemented factory methods for concrete documents on top of all 
   the inherited base operations.
 - **Document** provides a base _Product_ interface which all our products must
   implement.  
+- **AbstractDocument** provides a base class with some common behavior, including
+  constructor, and default implementations for _Product_ methods.  
 - **HtmlDocument**, **JsonDocument** are our _Concrete Products_ and implement
-  the _Document_ interface.
+  the _Document_ interface (by extending the _AbstracttDocument_ base class).
 
 [1]: https://i.ibb.co/1nQLs0N/Factory-Method.png
-[2]: https://i.ibb.co/6wXb9cP/Factory-Method-Example.png
+[2]: https://i.ibb.co/JrqyFbk/Factory-Method-Example.png
