@@ -11,6 +11,6 @@ namespace harlequiin\Patterns\FactoryMethod;
  */
 interface Document
 {
-    public function write(): void;
+    public function write(string $content): void;
     public function read(): string;
 }
