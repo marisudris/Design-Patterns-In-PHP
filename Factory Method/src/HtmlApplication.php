@@ -3,7 +3,12 @@ declare(strict_types=1);
 
 namespace harlequiin\Patterns\FactoryMethod;
 
-class HtmlDocumentLoader extends DocumentLoader
+/**
+ * Concrete Creator.
+ *
+ * Provides the implementation for the factory method.
+ */
+class HtmlApplication extends Application
 {
     public function createDocument(string $name): Document
     {
