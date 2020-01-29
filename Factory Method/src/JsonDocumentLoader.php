@@ -5,7 +5,7 @@ namespace harlequiin\Patterns\FactoryMethod;
 
 class JsonDocumentLoader extends DocumentLoader
 {
-    public function getDocument(): Document
+    public function createDocument(): Document
     {
        return new JsonDocument(); 
     }

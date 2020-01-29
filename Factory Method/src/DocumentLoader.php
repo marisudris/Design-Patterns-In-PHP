@@ -16,7 +16,7 @@ abstract class DocumentLoader
      */
     protected $document;
 
-    abstract public function getDocument(): Document;
+    abstract public function createDocument(): Document;
 
     public function saveDocument(): void
     {
