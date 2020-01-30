@@ -9,9 +9,13 @@
             "email": "harlequiin@protonmail.com"
         }
     ],
+    "scripts": {
+        "test": "phpunit tests/"
+    },
     "require": {},
     "require-dev": {
-        "psy/psysh": "*"
+        "psy/psysh": "*",
+        "phpunit/phpunit": "^8.5"
     },
 
     "autoload": {
