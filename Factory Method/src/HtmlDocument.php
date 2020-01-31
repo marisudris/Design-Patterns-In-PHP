@@ -15,8 +15,8 @@ class HtmlDocument extends AbstractDocument
     {
         return "<html><head><title>" .
                $this->name . 
-               "</head><body>" .
+               "</title></head><body>" .
                 $this->content .
-               "</body>";    
+               "</body></html>";    
     }
 }
