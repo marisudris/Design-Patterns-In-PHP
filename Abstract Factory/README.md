@@ -48,16 +48,16 @@ between objects from the same family. Hence the pattern is also know as **Kit** 
 
 - **FilterFactory** acts as our _Abstract Factory_.
 - **AllCapsFilterFactory** and **SmallCapsFilterFactory** are our _Concrete
-  Factories_ which both create the appropriate implementations of **Validator**
+  Factories_ both of which create the appropriate implementations of **Validator**
   and **Sanitizer** which are our _Abstract Products_.  
 - **SmallCapsValidator** and **SmallCapsSanitizer** together make up a specific family of
   _Concrete Products_ (which are created the **SmallCapsFilterFactory**).  
   Similarly - **AllCapsValidator** and **AllCapsSanitizer** together make up
   another family of _Concrete Products_ which are created by a different
   _Concrete Factory_ - **AllCapsFilterFactory**.  
-- **App** acts as the _Client_ which uses our factories and products - but only
-  through their interfaces, therefore following the SOLID principle of depending
-  on abstractions not concretions.
+- **App** acts as a _Client_ which uses our factories and products - but only
+  through their interfaces, therefore following the **SOLID** principle of depending
+  on abstractions, not details.
 
 [1]: https://i.ibb.co/XjDp4NN/Screenshot-2019-08-11-20-05-59.png
 [2]: https://i.ibb.co/L8Cps0g/Screenshot-2019-08-11-23-22-22.png
