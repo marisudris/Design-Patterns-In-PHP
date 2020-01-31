@@ -3,6 +3,13 @@ declare(strict_types=1);
 
 namespace harlequiin\Patterns\AbstractFactory;
 
+/**
+ * Concrete Factory.
+ *
+ * Implements the Abstract Factory interface and creates
+ * a specific family of products. In this case - validators,
+ * sanitizers that deal with small caps sanitization and validation.
+ */
 class SmallCapsFilterFactory implements FilterFactory
 {
     public function createValidator(): Validator

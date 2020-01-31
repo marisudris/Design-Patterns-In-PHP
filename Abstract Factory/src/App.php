@@ -3,6 +3,13 @@ declare(strict_types=1);
 
 namespace harlequiin\Patterns\AbstractFactory;
 
+/**
+ * Client.
+ *
+ * Makes use of the Abstract Factory and the Products
+ * it creates. Refers to the factories and products only
+ * through their abstract interfaces.
+ */
 class App
 {
     /**
