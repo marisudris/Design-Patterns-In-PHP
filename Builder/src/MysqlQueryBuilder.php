@@ -5,10 +5,11 @@ namespace harlequiin\Patterns\Builder;
 
 /**
  * ConcreteBuilder.
- * Constructs, assembles parts of of the product by implementing
+ *
+ * Constructs and assembles the product, implements
  * the Builder interface.
  * Defines and keeps track of the representation it creates.
- * In this case Product is the sql string.
+ * Here - the Product being created is the sql string.
  */
 class MysqlQueryBuilder implements QueryBuilder
 {

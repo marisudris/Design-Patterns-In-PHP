@@ -5,6 +5,8 @@ use harlequiin\Patterns\Builder\QueryBuilder;
 use harlequiin\Patterns\Builder\MysqlQueryBuilder;
 
 /**
+ * Client.
+ *
  * The client code uses the builder directly. A Director class is not needed 
  * because the client code needs different queries every time, 
  * so the sequence of the building steps cannot be easily reused.
