@@ -11,13 +11,13 @@ namespace harlequiin\Patterns\Builder;
  */
 interface QueryBuilder
 {
-    public function select(string ...$fields): self;
-    public function update(string $table): self;
-    public function delete(): self;
-    public function from(string $table): self;
-    public function set(string $field): self;
-    public function where(string $field, string $comparison, string $value): self;
-    public function equalTo(string $value): self;
-    public function limit(int $value): self;
+    public function select(string ...$fields): QueryBuilder;
+    public function update(string $table): QueryBuilder;
+    public function delete(): QueryBuilder;
+    public function from(string $table): QueryBuilder;
+    public function set(string $field): QueryBuilder;
+    public function where(string $field, string $comparison, string $value): QueryBuilder;
+    public function equalTo(string $value): QueryBuilder;
+    public function limit(int $value): QueryBuilder;
     public function getQuery(): string;
 }

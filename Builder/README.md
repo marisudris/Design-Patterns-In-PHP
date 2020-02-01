@@ -79,4 +79,4 @@ from all the other creational patterns - object creation is more granular.
   _ConcreteBuilder_, a _Director_ would introduce unnecessary complexity.
 
 [1]: https://i.ibb.co/5vYf87M/Screenshot-2019-08-12-02-59-41.png
-[2]: https://i.ibb.co/BNdqm3G/Builder-Example.png
+[2]: https://i.ibb.co/GM1V2V7/Builder-Example.png 
