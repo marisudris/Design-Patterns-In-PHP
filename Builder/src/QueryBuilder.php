@@ -5,8 +5,9 @@ namespace harlequiin\Patterns\Builder;
 
 /**
  * Builder.
+ *
  * Specifies an abstract interface for creating
- * parts of a product object.
+ * and assembling a product.
  */
 interface QueryBuilder
 {
