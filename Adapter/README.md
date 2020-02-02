@@ -1,6 +1,6 @@
 ## Adapter
 
-Converts the interface of a class into another interface the client expects.
+Converts the interface of a class into an interface the client understands.
 Adapter lets classes work together that couldn't otherwise because of
 incompatible interfaces.  
 Also known as **Wrapper**
@@ -18,12 +18,16 @@ Also known as **Wrapper**
 
 ### General Structure
 
+In general, we can implement the _Adapter_ pattern in 2 ways:
+- as an _object adapter_
+- as a _class adapter_
+
 #### Object Adapter
 
 ![UML diagram of the Object Adapter pattern][1]
 
 An object adapter relies on object composition.
-Works with the adaptee itself and all of its subclasses.
+Works with the adaptee itself and all of its potential subclasses.
 
 #### Class Adapter
 
@@ -41,23 +45,23 @@ Won't work when we want to adapt a class and all of it's subclasses.
   _Client_ code.
 - **Client**: implements some domain logic that, among other things, collaborates
   with objects implementing the _Target_ interface.
-- **Adaptee**: defines an existing interface that needs adapting. This is some
-  useful 3rd party service class or a legacy class that your code needs.
+- **Adaptee**: defines an existing interface that needs adapting. This could be
+  some useful 3rd party service class or a legacy class that your code needs.
 - **Adapter**: adapts the _Adaptee_ to the _Target_ interface.
 
 ### Our Example
 
 ![Our example UML diagram][3]
 
-- **MessengerInterface** acts as the _Target_ interface of our example. The _Client_
-  uses and recognizes it.  
+- **MessengerInterface** acts as the _Target_ interface in our example. The _Client_
+  recognizes and uses it.  
 - **IncompatibleMessenger** is our 3rd party (could also be legacy etc.) class
-  that doesn't implement the **MessengerInterface** and needs to adapt.
-- **IncompatibleMessengerAdapter** acts as _object adapter_ which composes our
-  incompatible class. Internally it delegates all the action to the adapted
-  messenger and returns it's result.  
-- **App** is our _Client_ and uses the _IncompatibleMessengerAdapter_ through
-  the _MessengerInterface_.  
+  that doesn't implement the **MessengerInterface** and needs adapting.
+- **IncompatibleMessengerAdapter** acts as the _Adapter_ (more specifically -
+  an _object adapter_) which composes our incompatible class. Internally, it
+  delegates all the action to the adapted messenger and returns its result.  
+- **App** is our _Client_ and makes use of the _IncompatibleMessengerAdapter_
+  through the _MessengerInterface_.  
 
 [1]: https://i.ibb.co/MfK5sqV/Adapter-Object.png
 [2]: https://i.ibb.co/gwxXzVj/Adapter-Class.png
