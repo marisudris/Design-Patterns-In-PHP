@@ -3,7 +3,12 @@ declare(strict_types=1);
 
 namespace harlequiin\Patterns\Adapter;
 
-class Client
+/**
+ * Client.
+ *
+ * Implements our (very trivial) domain logic.
+ */
+class App
 {
     public function readMessage(MessengerInterface $messenger): string
     {

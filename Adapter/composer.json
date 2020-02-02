@@ -9,14 +9,19 @@
             "email": "harlequiin@protonmail.com"
         }
     ],
-    "require": {},
+    "scripts": {
+        "test": "phpunit tests/"
+    },
+    "require": {
+        "phpunit/phpunit": "^8.5"
+    },
     "require-dev": {
         "psy/psysh": "*"
     },
 
     "autoload": {
         "psr-4": {
-            "harlequiin\\Patterns\\Adapter\\": ""
+            "harlequiin\\Patterns\\Adapter\\": "src/"
         }
     },
     "config": {
