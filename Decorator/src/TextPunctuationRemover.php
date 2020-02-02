@@ -5,6 +5,7 @@ namespace harlequiin\Patterns\Decorator;
 
 /**
  * Concrete Decorator.
+ *
  * Adds responsibilities to the Component.
  */
 class TextPunctuationRemover extends TextDecorator

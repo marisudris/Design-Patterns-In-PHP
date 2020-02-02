@@ -4,9 +4,9 @@ namespace harlequiin\Patterns\Decorator;
 
 /**
  * Decorator base class.
- * Maintains a reference to a Component object
- * and defines an interface that conforms to a 
- * Component's interface
+ *
+ * Implements the Component interface and
+ * maintains a reference to a Component object.
  */
 class TextDecorator implements TextWriterInterface
 {

@@ -5,6 +5,7 @@ namespace harlequiin\Patterns\Decorator;
 
 /**
  * Conrete Decorator.
+ *
  * Adds responsibilities to the Component.
  */
 class TextCapitalizer extends TextDecorator
