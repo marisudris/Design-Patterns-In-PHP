@@ -10,5 +10,5 @@ namespace harlequiin\Patterns\Adapter;
  */
 interface MessengerInterface
 {
-    public function message(): string;
+    public function getMessage(): string;
 }

@@ -25,7 +25,7 @@ class IncompatibleMessengerAdapter implements MessengerInterface
      * Uses the MessengerInterface that our domain understands and delegates to
      * the 3rd party service internally.
      */
-    public function message(): string
+    public function getMessage(): string
     {
         return $this->messenger->createMessage();
     }

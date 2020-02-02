@@ -12,7 +12,7 @@ class App
 {
     public function readMessage(MessengerInterface $messenger): string
     {
-        $message  =  $messenger->message();
+        $message  =  $messenger->getMessage();
         $dateTime = (new \DateTime())->format("Y-m-d H:i:s");
         $message .= "\n[Message read on {$dateTime}";
 
