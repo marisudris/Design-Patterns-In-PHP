@@ -9,7 +9,12 @@
             "email": "harlequiin@protonmail.com"
         }
     ],
-    "require": {},
+    "scripts": {
+        "test": "phpunit tests/"
+    },
+    "require": {
+        "phpunit/phpunit": "^8.5"
+    },
     "require-dev": {
         "psy/psysh": "*"
     },
