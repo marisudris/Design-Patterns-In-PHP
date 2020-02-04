@@ -24,13 +24,14 @@ class UIWidgetComposite implements UIWidgetInterface
     public function render(): void
     {
         ob_start();
+        echo "<div>";
         foreach ($this->uiwidgets as $widget) {
             $widget->render();
             echo "<br>";
         } 
-        // remove the last line break
-        $result = preg_replace("/<br>$/u", "", ob_get_clean());
+        $result = ob_get_clean();
 
+        $result = preg_replace("/<br>$/u", "</div>", $result);
         echo $result;
     }
 

@@ -23,9 +23,11 @@ class UIWidgetCompositeTest extends TestCase
         $this->composite->add($unorderedList);
         $this->composite->add($orderedList);
 
-        $expected  = "<ul><li>One</li><li>Two</li><li>Three</li></ul>";
+        $expected  = "<div>";
+        $expected .= "<ul><li>One</li><li>Two</li><li>Three</li></ul>";
         $expected .= "<br>";
         $expected .= "<ol><li>A</li><li>B</li><li>C</li></ol>"; 
+        $expected .= "</div>";
 
         $this->composite->render();
 
