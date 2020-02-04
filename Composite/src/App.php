@@ -6,7 +6,8 @@ namespace harlequiin\Patterns\Composite;
 /**
  * Client.
  *
- * Uses the Components through their uniform interface.
+ * Uses the Components through the uniform
+ * Component interface.
  */
 class App
 {
