@@ -9,11 +9,8 @@ class OrderedListWidgetTest extends TestCase
     public function testRendersOrderedList()
     {
         $listWidget = new OrderedListWidget();
+        $listWidget->render();
 
-        $this->assertEquals(
-            "<ol><li>A</li><li>B</li><li>C</li></ol>",
-            $listWidget->render(),
-            "OrderedListWidget should return an ordered list of three elements"
-        );
+        $this->expectOutputString("<ol><li>A</li><li>B</li><li>C</li></ol>");
     }
 }

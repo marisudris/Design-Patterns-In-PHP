@@ -9,6 +9,9 @@
             "email": "harlequiin@protonmail.com"
         }
     ],
+    "scripts": {
+        "test": "phpunit tests/"
+    },
     "require": {},
     "require-dev": {
         "psy/psysh": "*",
@@ -17,7 +20,7 @@
 
     "autoload": {
         "psr-4": {
-            "harlequiin\\Patterns\\Composite\\": ""
+            "harlequiin\\Patterns\\Composite\\": "src/"
         }
     },
     "config": {

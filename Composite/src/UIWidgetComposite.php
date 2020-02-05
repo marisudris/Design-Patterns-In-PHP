@@ -4,7 +4,9 @@ declare(strict_types=1);
 namespace harlequiin\Patterns\Composite;
 
 /**
- * Composite impementing the Component interface
+ * Composite.
+ *
+ * Impements the Component interface.
  */
 class UIWidgetComposite implements UIWidgetInterface
 {
@@ -19,17 +21,18 @@ class UIWidgetComposite implements UIWidgetInterface
         $this->uiwidgets = new \SplObjectStorage();
     }
 
-    public function render(): string
+    public function render(): void
     {
-        $result = "";
+        ob_start();
+        echo "<div>";
         foreach ($this->uiwidgets as $widget) {
-            $result .= "<br>" . $widget->render();
-        }
+            $widget->render();
+            echo "<br>";
+        } 
+        $result = ob_get_clean();
 
-        // remove the starting '<br>'
-        $result = substr($result, 4);
-
-        return $result;
+        $result = preg_replace("/<br>$/u", "</div>", $result);
+        echo $result;
     }
 
     public function getChildren(): array
