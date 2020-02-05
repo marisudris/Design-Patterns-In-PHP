@@ -10,9 +10,10 @@ use harlequiin\Patterns\Facade\Subsystem\JsonEncoder;
 /**
  * Facade.
  *
+ * Provides a simplified interface for the subsystem.
  * Knows which subsystem classes are responsible
- * for handling client request, delegates requests to appropriate
- * subsystem classes.
+ * for handling a client request, delegates requests
+ * to the appropriate subsystem classes.
  */
 class PageJsonData
 {
@@ -31,11 +32,14 @@ class PageJsonData
      */
     protected $jsonEncoder;
 
-    public function __construct()
-    {
-        $this->downloader = new PageDownloader();
-        $this->parser = new HtmlParser(); 
-        $this->jsonEncoder = new JsonEncoder();
+    public function __construct(
+        PageDownloader $downloader = null,
+        HtmlParser $parser = null,
+        JsonEncoder $jsonEncoder = null
+    ) {
+        $this->downloader = $downloader ?? new PageDownloader();
+        $this->parser = $parser ?? new HtmlParser(); 
+        $this->jsonEncoder = $jsonEncoder ?? new JsonEncoder();
     }
 
     /**
