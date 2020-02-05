@@ -4,11 +4,12 @@ declare(strict_types=1);
 namespace harlequiin\Patterns\Bridge;
 
 /**
- * Implementator.
+ * Implementor.
+ *
  * Defines the interface for implementation classes, it doesn't
- * have to correspond Abstraction's interface - they can be quite
+ * have to correspond to the Abstraction's interface - they can be quite
  * different.
- * Typically the Implementator interface provides only primitive 
+ * Typically the Implementor interface provides only primitive 
  * operations, and Abstraction defines higher-level operations
  * based on these primitives.
  */
