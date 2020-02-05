@@ -5,14 +5,17 @@ namespace harlequiin\Patterns\Strategy;
 
 /**
  * Context object.
- * Delegates to the WritingStrategyInterface
- * implementators (strategies) for writing.
+ *
+ * Delegates to the WriterStrategy object.
  */
 class TextHandler
 {
+    /**
+     * @var string
+     */
     private $data;
     /**
-     * @var WriterStrategyInterface
+     * @var WriterStrategy
      */
     private $textWriter;
 
@@ -30,7 +33,7 @@ class TextHandler
         return $this->textWriter->write($this->data);
     }
 
-    public function setWriter(WriterStrategyInterface $writer): void
+    public function setWriter(WriterStrategy $writer): void
     {
         $this->textWriter = $writer;
     }

@@ -5,9 +5,10 @@ namespace harlequiin\Patterns\Strategy;
 
 /**
  * Concrete Strategy.
- * Implements the algorithm using the Strategy interface.
+ *
+ * Implements the algorithm behind the  WriterStrategy interface.
  */
-class HtmlWriterStrategy implements WriterStrategyInterface
+class HtmlWriter implements WriterStrategy
 {
     public function write(string $data): string
     {
