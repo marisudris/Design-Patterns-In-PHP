@@ -5,8 +5,10 @@ namespace harlequiin\Patterns\TemplateMethod;
 
 /**
  * Abstract Class.
- * Defines abstract primitive operations that Concrete 
- * subclasses define to implement steps of an algorithm
+ *
+ * Defines a template method with specific steps which are
+ * all methods themselves and can/must be implemented in 
+ * subclasses.
  */
 abstract class AbstractView
 {
@@ -15,35 +17,34 @@ abstract class AbstractView
      */
     protected $rawData = [];
 
-    /**
-     * @var array sanitized data for safe
-     * embedding in the HTML
-     */
-    protected $sanitizedData = [];
-
     public function __construct(array $data)
     {
         $this->rawData = $data; 
     }
 
-    public function render()
+    /**
+     * Our template method.
+     * We declare it "final" since it must not be overriden.
+     */
+    final public function render()
     {
-        $this->doSanitizeDataForHtml();
-        echo $this->generateHtml();
+        echo $this->generateMarkup($this->sanitizeData());
     }
 
     /**
-     * Can be overridden using other html escaping 
+     * Can be overridden to use other html escaping 
      * or sanitization facilities.
      */
-    protected function doSanitizeDataForHtml(){
+    protected function sanitizeData(): array {
+        $sanitizedData = [];
         foreach ($this->rawData as $data) {
-            $this->sanitizedData[] = htmlentities($data);
+            $sanitizedData[] = htmlentities($data);
         }
+        return $sanitizedData;
     }
 
     /**
-     * should output generated HTML
+     * Should output generated HTML.
      */
-    abstract protected function generateHtml(): string;
+    abstract protected function generateMarkup(array $data): string;
 }

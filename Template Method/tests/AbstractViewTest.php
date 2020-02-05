@@ -15,7 +15,7 @@ class AbstractViewTest extends TestCase
         $view = $this->getMockForAbstractClass(AbstractView::class, [$data]);
 
         $view->expects($this->once())
-             ->method('generateHtml')
+             ->method('generateMarkup')
              ->willReturn($output);
 
         $view->render();
