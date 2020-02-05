@@ -7,14 +7,14 @@ You can think of a **Facade** as a simplicity adapter for a complex subsystem.
 #### Use the Facade pattern when:
 
 - you want to provide a simple interface to a complex subsystem. As subsystems
-  evolve they become gradually more complex. Most of the patterns we explore
+  evolve they gradually become more complex. Most of the patterns we explore
   here introduce a lot of smaller classes - the code gets more modular and
-  subsystems - easier to reuse, however it also complicates the communication
-  between a client and the susbsystem. A _Facade_ provides a simplified interface
+  subsystems - easier to reuse, howeve, it also complicates the communication
+  between a client and a susbsystem. A _Facade_ provides a simplified gateway
   for a complex susbsystem.
 - you want to layer your subsystems. _Facade_ introduces an entry point to each
-  level of a subsystem. Each layer then can communicate with each other via
-  those _Facades_.
+  level of a subsystem. Layer then can communicate with each other via those
+  _Facades_.
 
 ### General Structure
 
@@ -22,17 +22,18 @@ You can think of a **Facade** as a simplicity adapter for a complex subsystem.
 
 #### Participants:
 - **Facade**: delegates _Client_ requests to the appropriate subsystem objects. It
-  knows where to direct _Client_ requests and how to coordinate all the subsystem's
-  objects in order to fullfill that request. May additionally manage the
-  lifecycle of subsystem's objects.
+  knows where to direct the _Client_ requests and how to coordinate all the
+  subsystem's objects in order to fullfill that request. May additionally manage the
+  lifecycle of the subsystem's objects.
 - **Additional Facade**: may be split out from the _Facade_ in order to avoid
-  making it into yet another complex structure or
+  making it into yet another complex structure or a
   [God Object](https://en.wikipedia.org/wiki/God_object).
   It can be used by _Clients_ and other _Facades_ alike.
 - **Subsystem classes**: implement subsystem functionality. They handle all the work
   delegated to by the _Facade_ object. They don't know and hold no references to
   the _Facade_ object - they're only aware of other subsystem classes and work with
-  each other directly.
+  each other directly. From the subsystem's perspective a _Facades_ is just
+  another client.
 
 ### Our Example
 
