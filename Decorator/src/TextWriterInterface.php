@@ -5,6 +5,7 @@ namespace harlequiin\Patterns\Decorator;
 
 /**
  * Component.
+ *
  * Defines an interface for objects that 
  * can have responsibilities added to them 
  * dynamically.

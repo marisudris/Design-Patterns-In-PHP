@@ -4,11 +4,11 @@ namespace harlequiin\Patterns\Decorator;
 
 /**
  * Decorator base class.
- * Maintains a reference to a Component object
- * and defines an interface that conforms to a 
- * Component's interface
+ *
+ * Implements the Component interface and
+ * maintains a reference to a Component object.
  */
-abstract class AbstractTextDecorator implements TextWriterInterface
+class TextDecorator implements TextWriterInterface
 {
     /**
      * @var TextWriterInterface
@@ -20,5 +20,8 @@ abstract class AbstractTextDecorator implements TextWriterInterface
         $this->component = $component;
     }
 
-    abstract public function write(): string;
+    public function write(): string
+    {
+        return $this->component->write();
+    }
 }

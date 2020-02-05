@@ -5,12 +5,17 @@ namespace harlequiin\Patterns\Decorator;
 
 /**
  * Conrete Decorator.
+ *
  * Adds responsibilities to the Component.
  */
-class HtmlDecorator extends AbstractTextDecorator
+class TextCapitalizer extends TextDecorator
 {
     public function write(): string
     {
-        return "<div>". $this->component->write() . "</div>";
+        return mb_convert_case(
+            parent::write(),
+            MB_CASE_UPPER,
+            "utf-8"
+        );
     }
 }

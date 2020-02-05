@@ -9,11 +9,12 @@ class TextWriterTest extends TestCase
     public function testWritesOutText()
     {
         $textWriter = new TextWriter();
+        $expected = "Hello, world!";
 
         $this->assertEquals(
-            "Hello, world!",
+            $expected,
             $textWriter->write(),
-            "TextWriter should write out 'Hello, world!" 
+            "TextWriter should write out '{$expected}'" 
         );
     }
 }
