@@ -11,11 +11,11 @@ namespace harlequiin\Patterns\TemplateMethod;
  */
 class UnorderedListView extends AbstractView
 {
-    protected function generateMarkup(): string
+    protected function generateMarkup(array $data): string
     {
         $html = "<ul>";
-        foreach ($this->sanitizedData as $data) {
-            $html .= "<li>{$data}</li>";
+        foreach ($data as $line) {
+            $html .= "<li>{$line}</li>";
         }
         $html .= "</ul>";
 

@@ -17,12 +17,6 @@ abstract class AbstractView
      */
     protected $rawData = [];
 
-    /**
-     * @var array sanitized data for safe
-     * embedding in the HTML
-     */
-    protected $sanitizedData = [];
-
     public function __construct(array $data)
     {
         $this->rawData = $data; 
@@ -34,22 +28,23 @@ abstract class AbstractView
      */
     final public function render()
     {
-        $this->sanitizeData();
-        echo $this->generateMarkup();
+        echo $this->generateMarkup($this->sanitizeData());
     }
 
     /**
      * Can be overridden to use other html escaping 
      * or sanitization facilities.
      */
-    protected function sanitizeData(){
+    protected function sanitizeData(): array {
+        $sanitizedData = [];
         foreach ($this->rawData as $data) {
-            $this->sanitizedData[] = htmlentities($data);
+            $sanitizedData[] = htmlentities($data);
         }
+        return $sanitizedData;
     }
 
     /**
      * Should output generated HTML.
      */
-    abstract protected function generateMarkup(): string;
+    abstract protected function generateMarkup(array $data): string;
 }

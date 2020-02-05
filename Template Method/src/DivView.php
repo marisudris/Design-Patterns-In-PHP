@@ -11,11 +11,11 @@ namespace harlequiin\Patterns\TemplateMethod;
  */
 class DivView extends AbstractView
 {
-    protected function generateMarkup(): string
+    protected function generateMarkup(array $data): string
     {
         $html = "";
-        foreach ($this->sanitizedData as $data) {
-            $html .= "<div>{$data}</div>";
+        foreach ($data as $line) {
+            $html .= "<div>{$line}</div>";
         }
 
         return $html;
