@@ -6,10 +6,13 @@ namespace harlequiin\Patterns\Strategy;
 /**
  * Context object.
  *
- * Delegates to the WriterStrategy objects
+ * Delegates to the WriterStrategy object.
  */
 class TextHandler
 {
+    /**
+     * @var string
+     */
     private $data;
     /**
      * @var WriterStrategy

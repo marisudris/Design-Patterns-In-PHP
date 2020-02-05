@@ -7,7 +7,7 @@ namespace harlequiin\Patterns\Strategy;
  * Client.
  *
  * Configures the TextHandler (our Context object) with
- * a specific writer strategy - HtmlWriter in this case.
+ * a specific writer strategy - HtmlWriter, in this case.
  */
 class App
 {

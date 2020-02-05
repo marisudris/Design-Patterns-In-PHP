@@ -6,7 +6,7 @@ namespace harlequiin\Patterns\Strategy;
 /**
  * Concrete Strategy.
  *
- * Implements the algorithm using the WriterStrategy interface.
+ * Implements the algorithm behind the  WriterStrategy interface.
  */
 class JsonWriter implements WriterStrategy
 {
