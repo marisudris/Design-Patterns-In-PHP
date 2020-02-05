@@ -1,13 +1,13 @@
 <?php
 declare(strict_types=1);
 
+namespace harlequiin\Patterns\Bridge;
+
 /**
  * Refined Abstraction.
  *
  * Extends the interface defined by Abstraction.
  */
-namespace harlequiin\Patterns\Bridge;
-
 class TimelinePage extends AbstractPage
 {
     public function render(): string

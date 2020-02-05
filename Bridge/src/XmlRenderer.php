@@ -6,9 +6,8 @@ namespace harlequiin\Patterns\Bridge;
 /**
  * Concrete Implementor.
  *
- * Implements the Implementor interface and defines
- * it's concrete implementation.
- * (Very) basic XML renderer based on arbitrary DTD
+ * Implements the Implementor interface.
+ * A (very) basic XML renderer based on an arbitrary DTD
  * by the author (me).
  */
 class XmlRenderer implements RendererInterface

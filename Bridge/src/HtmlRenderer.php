@@ -6,9 +6,8 @@ namespace harlequiin\Patterns\Bridge;
 /**
  * Concrete Implementor.
  *
- * Implements the Implementor interface and defines
- * it's concrete implementation.
- * (Very) basic HTML markup renderer.
+ * Implements the Implementor (RendererInterface) interface.
+ * A (very) basic HTML markup renderer.
  */
 class HtmlRenderer implements RendererInterface
 {

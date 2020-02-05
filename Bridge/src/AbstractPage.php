@@ -7,7 +7,7 @@ namespace harlequiin\Patterns\Bridge;
  * Abstraction.
  *
  * Defines the Abstraction's interface.
- * Maintains to an object of type Implementator (RendererInterface).
+ * Maintains a reference to an Implementor object (RendererInterface).
  */
 abstract class AbstractPage
 {
