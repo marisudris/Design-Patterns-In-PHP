@@ -3,6 +3,11 @@ declare(strict_types=1);
 
 namespace harlequiin\Patterns\Facade\Subsystem;
 
+/**
+ * Subsystem class.
+ *
+ * Represents a parsed HTML tree.
+ */
 class HtmlTree
 {
     /**
@@ -25,7 +30,7 @@ class HtmlTree
         $this->children = [];        
     }
 
-    public function addChild(HtmlTree $child): self
+    public function addChild(HtmlTree $child): HtmlTree
     {
         $this->children[] = $child;
         return $this;
@@ -36,7 +41,7 @@ class HtmlTree
         return $this->children;
     }
 
-    public function setText(string $text): self
+    public function setText(string $text): HtmlTree
     {
         $this->text = $text;
         return $this;
@@ -47,7 +52,7 @@ class HtmlTree
         return $this->getText;
     }
 
-    public function setType(string $type): self
+    public function setType(string $type): HtmlTree
     {
         $this->type = $type;
         return $this;
