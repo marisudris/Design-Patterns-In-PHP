@@ -6,7 +6,7 @@ namespace harlequiin\Patterns\Observer;
 /**
  * Observer.
  *
- * Defines and interface for observer objects that can be
+ * Defines the interface for observer objects that can be
  * notified by the Subject to which they've subscribed.
  */
 interface ViewInterface

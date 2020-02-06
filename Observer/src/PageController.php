@@ -11,7 +11,8 @@ use SplObjectStorage;
  * Stores references its observers; any number of observers may subscribe
  * to the subject.
  * Provides an interface for attaching/detaching observer objects.
- * As Concrete Subject - stores the state of interest to Concrete Observer objects.
+ * As Concrete Subject - stores the state that is of interest to interest to
+ * Concrete Observer objects.
  * Sends a notification to its observers whenever its state changes.
  */
 class PageController
