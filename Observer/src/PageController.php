@@ -32,14 +32,14 @@ class PageController
         $this->views = new SplObjectStorage();
     }
 
-    public function attach(ViewInterface $view): self
+    public function attach(ViewInterface $view): PageController
     {
         $this->views->attach($view);
 
         return $this;
     }
 
-    public function updateData(string $data): self
+    public function updateData(string $data): PageController
     {
         $this->data = $data;
         $this->notify();
@@ -54,7 +54,7 @@ class PageController
         }
     }
 
-    public function detach(ViewInterface $view): self
+    public function detach(ViewInterface $view): PageController
     {
         $this->views->detach($view);
 
