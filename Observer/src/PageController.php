@@ -3,12 +3,17 @@ declare(strict_types=1);
 
 namespace harlequiin\Patterns\Observer;
 
+use SplObjectStorage;
+
 /**
- * Subject & Concrete Subject.
- * Knows its observers, any number of observers may observe a subject.
- * Provides interface for attaching/[detaching] observer objects.
- * As Concrete subject - stores state of interest to Concrete Observer objects.
- * Sends a notification to its observers when its state changes.
+ * Concrete Subject.
+ *
+ * Stores references its observers; any number of observers may subscribe
+ * to the subject.
+ * Provides an interface for attaching/detaching observer objects.
+ * As Concrete Subject - stores the state that is of interest to interest to
+ * Concrete Observer objects.
+ * Sends a notification to its observers whenever its state changes.
  */
 class PageController
 {
@@ -24,17 +29,17 @@ class PageController
 
     public function __construct()
     {
-        $this->views = new \SplObjectStorage();
+        $this->views = new SplObjectStorage();
     }
 
-    public function attach(ViewInterface $view): self
+    public function attach(ViewInterface $view): PageController
     {
         $this->views->attach($view);
 
         return $this;
     }
 
-    public function updateData(string $data): self
+    public function updateData(string $data): PageController
     {
         $this->data = $data;
         $this->notify();
@@ -47,5 +52,12 @@ class PageController
         foreach($this->views as $view) {
             $view->render($this->data);
         }
+    }
+
+    public function detach(ViewInterface $view): PageController
+    {
+        $this->views->detach($view);
+
+        return $this;
     }
 }
