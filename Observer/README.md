@@ -70,6 +70,9 @@ Also known as: **Publish-Subscribe, Dependents**.
   which you can implement in your projects.  
 - **SimpleView** is our _ConcreteObserver_. It renders the data received as html -
   with all the proper character escapes.
+- **App** acts as a _Client_. It creates the _PageController_ and subscribes
+  a _SimpleView_ to it. Then it updates the _PageController_ a couple of times
+  to see the _Observer Pattern_ in full effect.
 
 [1]: https://i.ibb.co/RpCJTBz/Observer.png
-[2]: https://i.ibb.co/SQWjqR4/Screenshot-2019-08-22-04-46-57.png
+[2]: https://i.ibb.co/FHhGHfV/Observer-Example.png 
