@@ -19,5 +19,4 @@ class Message
     {
         return $this->message;
     }
-
 }
