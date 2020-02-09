@@ -2,7 +2,7 @@
 
 Provides a way to access the elements of an aggregate object in sequence,
 without exposing its underlying implementation.  
-Also known as **Cursor**
+Also known as **Cursor**.
 
 #### Use the Iterator pattern when:
 
@@ -47,7 +47,7 @@ Also known as **Cursor**
   one that goes reverse, another one that filters the elements etc.
 - **MessageIterator** is our _ConcreteIterator_ which accesses and iterates over
   a collection of _Message_ objects from _MessageAggregate_. PHP provides
-  a native _Iterator_ interface and our **MessageIterator** implements it.
+  a native _Iterator_ interface and our **MessageIterator** implements it.  
   PHP _Iterator_ interface declares 5 methods that we implement here:
   - _current_: returns the current element in the current iteration.
   - _key_: returns the key (pointer) of the current element in the iteration.
@@ -65,4 +65,4 @@ Also known as **Cursor**
   sake of simplicity I'll leave it as it is.
 
 [1]: https://i.ibb.co/nMwfwQw/Iterator.png
-[2]:
+[2]: https://i.ibb.co/g9FW9tc/Iterator-Example.png

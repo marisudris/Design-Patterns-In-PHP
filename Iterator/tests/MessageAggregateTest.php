@@ -38,8 +38,9 @@ class MessageAggregateTest extends TestCase
 
     private function getMessageMock(string $messageString)
     {
-        $message = $this->createMock(Message::class);
-        $message->setMessage($messageString);
+        $message = $this->getMockBuilder(Message::class)
+                        ->setConstructorArgs([$messageString])
+                        ->getMock();
         return $message;
     }
 }

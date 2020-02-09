@@ -13,7 +13,7 @@ class MessageIteratorTest extends TestCase
         $iterator = $this->getIterator();
         $iterator->next();
         $this->assertEquals(
-            $this->getMessageMock(""),
+            $this->getMessageMock("123"),
             $iterator->current()
         );
     }
@@ -80,8 +80,9 @@ class MessageIteratorTest extends TestCase
 
     private function getMessageMock(string $messageString)
     {
-        $message = $this->createMock(Message::class);
-        $message->setMessage($messageString);
+        $message = $this->getMockBuilder(Message::class)
+                        ->setConstructorArgs([$messageString])
+                        ->getMock();
         return $message;
     }
 }

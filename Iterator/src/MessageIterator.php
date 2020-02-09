@@ -12,6 +12,11 @@ class MessageIterator implements Iterator
      */
     private $position;
 
+    /**
+     * @var Message[]
+     */
+    private $collection;
+
     public function __construct(MessageAggregate $messageAggregate)
     {
         $this->collection = $messageAggregate->getMessages();
