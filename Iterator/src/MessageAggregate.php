@@ -19,7 +19,7 @@ class MessageAggregate implements IteratorAggregate
         $this->messages[] = $message;
     }
 
-    public function getMessages()
+    public function getMessages(): array
     {
         return $this->messages;
     }
