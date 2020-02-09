@@ -10,7 +10,7 @@ class Message
      */
     private $message;
 
-    public function setMessage(string $message): void
+    public function __construct(string $message)
     {
         $this->message = $message;
     }
