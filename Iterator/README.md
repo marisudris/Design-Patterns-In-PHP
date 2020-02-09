@@ -63,6 +63,16 @@ Also known as **Cursor**.
   simply want them all at once in a single array. We could think of and add some
   more methods that a typical _collection_ type class would need, but for the
   sake of simplicity I'll leave it as it is.
+- **App** is our _Client_ class. It uses the _MessageAggregate_ collection,
+  adds a couple of _Messages_ to it and echoes them in a _foreach_ loop.  
+  In PHP a _foreach_ loop implicitly makes use of the _Iterator_ - in this case it
+  recognizes the _InteratorAggregate_ implementation that is the
+  _MessageAggregate_ - and calls its _getIterator_ method internally, and loops
+  through the returned iterator.  
+  Both PHP's _Iterator_ and _Iterator_ extend the _Traversable_ interface which
+  is another native PHP interface which is used to detect if the object can be
+  used inside a _foreach_ loop. _Traversable_  can't be directly implemented -
+  you must use either _Iterator_ or _IteratorAggregate_ for user-defined classes.
 
 [1]: https://i.ibb.co/nMwfwQw/Iterator.png
 [2]: https://i.ibb.co/g9FW9tc/Iterator-Example.png
