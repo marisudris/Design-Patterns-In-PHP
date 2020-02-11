@@ -9,7 +9,7 @@ class OrderTest extends TestCase
 {
     public function testgetStatusDelegatestoOrderState()
     {
-        $order = new Order();
+        $order = new Order('user123');
         $state = $this->createMock(OrderState::class);
         $state->expects($this->once())
               ->method('getStatus')
@@ -20,7 +20,7 @@ class OrderTest extends TestCase
 
     public function testPrepareDelegatestoOrderState()
     {
-        $order = new Order();
+        $order = new Order('user123');
         $state = $this->getMockForSingleCallExpectation('prepare');
         $order->setState($state);
         $order->prepare();
@@ -28,7 +28,7 @@ class OrderTest extends TestCase
 
     public function testSendDelegatestoOrderState()
     {
-        $order = new Order();
+        $order = new Order('user123');
         $state = $this->getMockForSingleCallExpectation('send');
         $order->setState($state);
         $order->send();
@@ -36,7 +36,7 @@ class OrderTest extends TestCase
 
     public function testCancelDelegatestoOrderState()
     {
-        $order = new Order();
+        $order = new Order('user123');
         $state = $this->getMockForSingleCallExpectation('cancel');
         $order->setState($state);
         $order->cancel();

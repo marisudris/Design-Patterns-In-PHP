@@ -27,13 +27,19 @@ class Order
      */
     protected $shipped;
 
-    public function __construct()
+    public function __construct(string $user)
     {
+        $this->user = $user;
         $this->state = new OrderPending($this);
         $this->created = new DateTime();
     }
 
-    public function setShipped(DateTime $dateTime)
+    public function getUser(): string
+    {
+        return $this->user;
+    }
+
+    public function setShipped(DateTime $dateTime): void
     {
         $this->shipped = $dateTime;
     }
