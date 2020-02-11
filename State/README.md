@@ -40,9 +40,29 @@ its internal state changes. It appers as if the object has changed its class.
 
 ![Our example UML diagram][2]
 
-- **...** ...
-- **...** ...
-- **...** ...
+- **Order** is our _Context_ object. It can have four different states:
+  pending, ready, shipped, cancelled - all of those are represented as separate
+  state classes. It pretty much delegates all of it's methods to it's state
+  object which takes care of the state transition and date setting (if needed)
+  for the _Order_.
+- **OrderState** is our _State_ class. It's an abstract class which defines an
+  interface for all the concrete state classes and provides a default implementation
+  for all its methods. _getStatus_ returns a status string which all of the
+  states have as a constant, the rest of the methods are empty. Some of them
+  stay empty in the concrete state classes since they don't make sense for them -
+  like sending a cancelled or unprepared (pending) order, or cancelling
+  a shipped order.
+- **OrderPending**, **OrderReady**, **OrderShipped**, **OrderCancelled** are
+  all the _ConcreteState_ classes in our example. _OrderPending_ and
+  _OrderReady_ can transition to _OrderCancelled_ if _cancel()_ is called on an
+  _Order_. _OrderPending_ can transition to _OrderReady_ when _prepare()_ is
+  called on _Order_, and only _OrderReady_ can transition to _OrderShipped_ when
+  _send()_ is called on _Order_). Both _OrderShipped_ and _OrderCancelled_ are
+  considered _terminal_ states from which we can't transition to any other state
+  anymore, so they don't define any state-specific behaviors, they only inherit the
+  empty methods from _OrderState_.
+- **App** is our _Client_. It has a simple _run_ method where it creates and
+  order and lets it undergo a couple of state changes.
 
 [1]: ...
 [2]: ...
