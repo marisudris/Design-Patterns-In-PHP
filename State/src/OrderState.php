@@ -3,6 +3,14 @@ declare(strict_types=1);
 
 namespace harlequiin\Patterns\State;
 
+/**
+ * State.
+ *
+ * Abstract class which defines the interface for the
+ * Context (Order) object to delegate to. Also defines
+ * the constructor which accepts and stores a reference 
+ * to the Order context object.
+ */
 abstract class OrderState
 {
     /**

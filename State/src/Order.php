@@ -5,6 +5,12 @@ namespace harlequiin\Patterns\State;
 
 use DateTime;
 
+/**
+ * Context.
+ *
+ * Our main class which is used by the Client and
+ * needs to alter its behavior when its state changes.
+ */
 class Order
 {
     /**

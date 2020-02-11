@@ -5,6 +5,12 @@ namespace harlequiin\Patterns\State;
 
 use DateTime;
 
+/**
+ * ConcreteState.
+ *
+ * Extends the base State object (OrderState) and overrides
+ * its methods, if necessary.
+ */
 class OrderReady extends OrderState
 {
     /**
