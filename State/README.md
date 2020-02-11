@@ -40,11 +40,15 @@ its internal state changes. It appers as if the object has changed its class.
 
 ![Our example UML diagram][2]
 
-- **Order** is our _Context_ object. It can have four different states:
-  pending, ready, shipped, cancelled - all of those are represented as separate
-  state classes. It pretty much delegates all of it's methods to it's state
-  object which takes care of the state transition and date setting (if needed)
-  for the _Order_.
+- **Order** is our _Context_ object. It holds a reference to an _OrderState_
+  object and it can have four different states:
+  - pending
+  - ready
+  - shipped
+  - cancelled
+  \- all of those are represented as separate state classes.
+  _Order_ delegates all of its methods to its state object which takes
+  care of the state transitions and date setting (if needed) for the _Order_.
 - **OrderState** is our _State_ class. It's an abstract class which defines an
   interface for all the concrete state classes and provides a default implementation
   for all its methods. _getStatus_ returns a status string which all of the
@@ -64,5 +68,5 @@ its internal state changes. It appers as if the object has changed its class.
 - **App** is our _Client_. It has a simple _run_ method where it creates and
   order and lets it undergo a couple of state changes.
 
-[1]: ...
-[2]: ...
+[1]: https://i.ibb.co/XXv3LJ3/State.png
+[2]: https://i.ibb.co/QM6SVMs/State-Example.png
