@@ -1,0 +1,28 @@
+{
+    "name": "harlequiin/command",
+    "description": "Command pattern",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Maris Udris",
+            "email": "harlequiin@protonmail.com"
+        }
+    ],
+    "require": {},
+    "require-dev": {
+        "psy/psysh": "*",
+        "phpunit/phpunit": "^8.0"
+    },
+    "scripts": {
+        "test": "phpunit tests/"
+    },
+    "autoload": {
+        "psr-4": {
+            "harlequiin\\Patterns\\Command\\": "src/"
+        }
+    },
+    "config": {
+        "bin-dir": "bin/"
+    }
+}
