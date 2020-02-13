@@ -52,11 +52,6 @@ them, store the into a "command history" stack which we can use to implement the
   fulfilling the _request_. Commands can be made immutable by allowing the
   initialization of the parameter fields and the _Receiver_ reference only in the
   constructor.
-- **Client**: creates and configures the _ConcreteCommand_ objects. It must
-  pass all the necesary parameters and the _Receiver_ instance into the
-  _ConcreteCommand_. Afterwards - the resulting _ConcreteCommand_ object can be
-  passed and associated with one or more _Senders_ which call the _execute()_
-  operation on it.
 - **Invoker**: aka _Sender_, is responsible for initiating the _request_. It does
   so by triggering the _ConcreteCommand_ to carry out the _request_. _Invokers_
   themselves don't create and configure _ConcreteCommand_ - it's the _Clients_
@@ -68,14 +63,35 @@ them, store the into a "command history" stack which we can use to implement the
   the _request_. Most _Commands_ only handle details of how the _request_ is
   passed to the _Receiver_. Any class may serve as a _Receiver_ - mostly it
   deals with some back-end business logic.
+- **Client**: creates and configures the _ConcreteCommand_ objects. It must
+  pass all the necesary parameters and the _Receiver_ instance into the
+  _ConcreteCommand_. Afterwards - the resulting _ConcreteCommand_ object can be
+  passed and associated with one or more _Senders_ which call the _execute()_
+  operation on it.
 
 ### Our Example
 
 ![Our example UML diagram][2]
 
-- **...** ...
-- **...** ...
-- **...** ...
+- **ValidatorCommand** is our _Command_ interface. It declares a single
+  _validate()_ method which is equivalent to _execute()_ in the general
+  structure. All _ConcreteCommands_ must implement this interface.
+- **BaseValidatorCommand** is an _abstract_ class which implements the
+  _ValidatorCommand_ interface and is a supeclass for all our _ConcreteCommands_.
+  It defines a _constructor_ for all of our _ConcreteCommands_, it takes and
+  stores a reference to an _ArrayValidator_ object.
+- **NumericValidatorCommand**, **LowerCaseValidatorCommand**,
+  **UpperCaseValidatorCommand** are the _ConcreteCommands_. Each of them store
+  a reference to an _ArrayValidator_ object as a _Receiver_ and call its
+  operations accordingly.
+- **ArrayValidator** is our _Receiver_ object. It executes the actual logic,
+  its methods getting invoked inside one of the _ConcreteCommand_ objects. It
+  basically provides a couple of (very) simplistic validation methods for array
+  and its elements.
+- **App** is our _Invoker_. It instantiates an _ArrayValidator_ (providing an
+  actual array for it), passes it to one of the commands
+  (_LowerCaseValidatorCommand_ in this case) - and calls the command's
+  _validate()_ method.
 
-[1]: ...
+[1]: https://i.ibb.co/3SqKvrw/Command.png
 [2]: ...
