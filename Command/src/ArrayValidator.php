@@ -3,6 +3,13 @@ declare(strict_types=1);
 
 namespace harlequiin\Patterns\Command;
 
+/**
+ * Receiver.
+ *
+ * Executes the relevant business logic. Provides a couple of
+ * methods which get invoked by the command objects upon a 
+ * request from the Invoker.
+ */
 class ArrayValidator
 {
     /**

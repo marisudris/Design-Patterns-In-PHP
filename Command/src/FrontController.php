@@ -3,6 +3,14 @@ declare(strict_types=1);
 
 namespace harlequiin\Patterns\Command;
 
+/**
+ * Client.
+ *
+ * Sets up a LowerCaseValidatorCommand with ArrayValidator
+ * which is our Receiver, them configures the BaseController
+ * (which is our Invoker) with it. Calls the BaseController
+ * whenever it needs to trigger a request.
+ */ 
 class FrontController
 {
     public function run(array $input)
