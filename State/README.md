@@ -4,7 +4,7 @@ A behavioral design pattern that allows an object to alter its behavior when
 its internal state changes. It appers as if the object has changed its class.  
 Also know as: **Objects for States**.
 
-#### Use the Strategy pattern when:
+#### Use the State pattern when:
 
 - your object needs to change its behavior when its state gets changed and it
   happens frequently.
