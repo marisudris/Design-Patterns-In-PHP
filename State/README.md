@@ -70,5 +70,5 @@ Also know as: **Objects for States**.
 - **App** is our _Client_. It has a simple _run_ method where it creates an
   _Order_ and makes it undergo a couple of state changes.
 
-[1]: https://i.ibb.co/XXv3LJ3/State.png
+[1]: https://i.ibb.co/hHn4JX7/State.png
 [2]: https://i.ibb.co/vJJmxcb/State-Example.png
